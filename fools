@@ -1,0 +1,43 @@
+import random
+
+def game():
+    print("Добро пожаловать в игру 'Камень, ножницы, бумага'!")
+    print("Выберите свой ход:")
+    print("1. Камень")
+    print("2. Ножницы")
+    print("3. Бумага")
+    player_choice = int(input("Введите номер выбранного хода: "))
+    computer_choice = random.randint(1, 3)
+    print(f"Компьютер выбрал {computer_choice}")
+    
+    if player_choice == 1:
+        if computer_choice == 1:
+            print("Ничья!")
+        elif computer_choice == 2:
+            print("Вы победили!")
+        else:
+            print("Компьютер победил!")
+    elif player_choice == 2:
+        if computer_choice == 1:
+            print("Компьютер победил!")
+        elif computer_choice == 2:
+            print("Ничья!")
+        else:
+            print("Вы победили!")
+    elif player_choice == 3:
+        if computer_choice == 1:
+            print("Вы победили!")
+        elif computer_choice == 2:
+            print("Компьютер победил!")
+        else:
+            print("Ничья!")
+    else:
+        print("Некорректный выбор!")
+    
+    play_again = input("Хотите сыграть еще раз? (y/n): ")
+    if play_again.lower() == "y":
+        game()
+    else:
+        print("Спасибо за игру!")
+        
+game()
